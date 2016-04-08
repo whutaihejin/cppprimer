@@ -22,7 +22,7 @@ class Token {
       char cval;
       int ival;
       double dval;
-    } val;
+    };
 };
 int main(int argc, char* argv[]) {
   TokenValue first_token = {'A'};
@@ -39,11 +39,11 @@ int main(int argc, char* argv[]) {
   token.kind = Token::CHAR;
   switch (token.kind) {
     case Token::INT:
-      token.val.ival = 42; break;
+      token.ival = 42; break;
     case Token::CHAR:
-      token.val.cval = 'a'; break;
+      token.cval = 'a'; break;
     case Token::DBL:
-               token.val.dval = 2.66; break;
+      token.dval = 2.66; break;
   }
   return 0;
 }

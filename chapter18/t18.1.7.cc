@@ -2,6 +2,7 @@
 #include <memory>
 #include <stdexcept>
 #include <stdlib.h>
+#include <stdint.h>
 template <class T> class Cache {
   public:
     Cache(): next_(0) {}
@@ -15,6 +16,7 @@ template <class T> class Cache {
     static std::allocator<T> allocator;
     static T* head;
     static const std::size_t chunk;
+    static size_t counter;
 };
 
 template <class T> void* Cache<T>::operator new (std::size_t size) {
@@ -41,11 +43,13 @@ template <class T> void Cache<T>::operator delete (void* element, std::size_t si
 template <class T> void Cache<T>::attach(T* element) {
   element->Cache<T>::next_ = head;
   head = element;
+  std::cout << "counter=" << ++counter << std::endl;
 }
 
 template <class T> std::allocator<T> Cache<T>::allocator;
 template <class T> T* Cache<T>::head = 0;
-template <class T> const size_t Cache<T>::chunk = 16;
+template <class T> const std::size_t Cache<T>::chunk = 16;
+template <class T> std::size_t Cache<T>::counter = 0;
 
 class Base : public Cache<Base> {
   public:

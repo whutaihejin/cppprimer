@@ -47,7 +47,7 @@ template <class T> void Vector<T>::push_back(const T& element) {
 
 template <class T> void Vector<T>::reallocate() {
   std::ptrdiff_t size = free_ - head_;
-  std::ptrdiff_t capacity = 2 * std::max(size, static_cast<std::ptrdiff_t>(1));
+  std::ptrdiff_t capacity = 2 * std::max<std::ptrdiff_t>(size, 1);
   T* new_head = static_cast<T*>(operator new[](capacity * sizeof(T)));;
   std::uninitialized_copy(head_, free_, new_head);
   for (T* p = free_; p != head_; /*empty*/) {

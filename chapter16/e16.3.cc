@@ -8,6 +8,7 @@ int compare(const T& x, const T& y) {
 
 int main(int argc, char* argv[]) {
   compare(1, 2);
-  compare("hi", "hello"); // compile error: char [3] and char [6]
+  // compare("hi", "hello"); // compile error: char [3] and char [6]
+  compare<std::string>("hi", "hello");
   return 0;
 }

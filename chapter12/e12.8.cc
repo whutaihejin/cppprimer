@@ -2,7 +2,7 @@
 
 class Sales_item {
   public:
-    double avg_price() const {
+    inline double avg_price() const {
       if (units_sold) {
         return revenue / units_sold;
       } else {

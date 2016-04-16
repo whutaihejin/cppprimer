@@ -17,11 +17,11 @@ class Screen {
     index_t width_;
 };
 
-char Screen::get(index_t r, index_t c) {
-  return content_[0];
+char Screen::get(index_t r, index_t c) const {
+  return contents_[0];
 }
 
-inline Screen::get_cursor() const {
+inline Screen::index_t Screen::get_cursor() const {
   return cursor_;
 }
 

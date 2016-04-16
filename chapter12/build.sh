@@ -10,7 +10,7 @@ fi
 source_file_list=$(ls *.cc)
 for file in $source_file_list ;do
   target_file_list="${target_file_list} ${file/.cc/}"
-  target_list="${target_list}${file/.cc/}:\n\tg++ -o ${file/.cc/} $file\n"
+  target_list="${target_list}${file/.cc/}:\n\tg++ -g -o ${file/.cc/} $file\n"
 done
 
 echo -e ".PHONY : ALL" >> Makefile

@@ -4,7 +4,7 @@
 class Screen {
   public:
     typedef std::string::size_type index_t;
-    Screen(): contents_("whu") {}
+    Screen(): contents_("whu"), cursor_(0), counter_(0) {}
     char get() const {
       return contents_[cursor_];
     };
@@ -15,6 +15,7 @@ class Screen {
     index_t cursor_;
     index_t height_;
     index_t width_;
+    mutable int counter_;
 };
 
 char Screen::get(index_t r, index_t c) const {
@@ -22,6 +23,7 @@ char Screen::get(index_t r, index_t c) const {
 }
 
 inline Screen::index_t Screen::get_cursor() const {
+  std::cout << ++counter_ << std::endl;
   return cursor_;
 }
 
@@ -29,5 +31,7 @@ int main(int argc, char* argv[]) {
   Screen screen;
   std::cout << screen.get() << std::endl;
   std::cout << screen.get(0, 0) << std::endl;
+  std::cout << screen.get_cursor() << std::endl;
+  std::cout << screen.get_cursor() << std::endl;
   return 0;
 }

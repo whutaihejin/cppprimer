@@ -22,6 +22,9 @@ class Base {
     void set_ptr_val(int val) {
       *ptr_ = val;
     }
+    ~Base() {
+      delete ptr_;
+    }
   private:
     int val_;
     int* ptr_;
@@ -39,5 +42,10 @@ int main(int argc, char* argv[]) {
   b.set_ptr_val(66);
   std::cout << b.get_ptr_val() << std::endl;
   std::cout << c.get_ptr_val() << std::endl;
+  //
+  int* p = new int(123);
+  Base test1(p, 10);
+  delete p;
+  test1.set_ptr_val(0); // disaster
   return 0;
 }

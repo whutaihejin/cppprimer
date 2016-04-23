@@ -31,7 +31,7 @@ bool operator>=(const Mblog& x, const Mblog& y) {
 }
 
 std::ostream& operator<<(std::ostream& os, const Mblog& x) {
-  os << "{" << x.mid_ << " " << x.create_at_ << "}";
+  os << "{mid: " << x.mid_ << ", create_at: " << x.create_at_ << "}";
   return os;
 }
 

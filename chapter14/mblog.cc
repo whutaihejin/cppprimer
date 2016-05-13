@@ -5,7 +5,7 @@ bool operator==(const Mblog& x, const Mblog& y) {
 }
 
 bool operator!=(const Mblog& x, const Mblog& y) {
-  return !operator==(x, y);
+  return !(x == y);
 }
 
 bool operator<(const Mblog& x, const Mblog& y) {
@@ -16,7 +16,7 @@ bool operator<(const Mblog& x, const Mblog& y) {
 }
 
 bool operator<=(const Mblog& x, const Mblog& y) {
-  return operator<(x, y) || operator==(x, y);
+  return x < y || x == y;
 }
 
 bool operator>(const Mblog& x, const Mblog& y) {
@@ -27,7 +27,7 @@ bool operator>(const Mblog& x, const Mblog& y) {
 }
 
 bool operator>=(const Mblog& x, const Mblog& y) {
-  return operator>(x, y) || operator==(x, y);
+  return x > y || x == y;
 }
 
 std::ostream& operator<<(std::ostream& os, const Mblog& x) {

@@ -37,6 +37,7 @@ VIPCustomer::VIPCustomer(const VIPCustomer& rhs): Customer(rhs), priority_(rhs.p
 VIPCustomer& VIPCustomer::operator=(const VIPCustomer& rhs) {
   Customer::operator=(rhs);
   priority_ = rhs.priority_;
+  return *this;
 }
 
 int main(int argc, char* argv[]) {

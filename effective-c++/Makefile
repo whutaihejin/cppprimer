@@ -1,9 +1,11 @@
 .PHONY : ALL
-ALL :  t12
+ALL :  base t12
 
+base:
+	g++ -g -o base base.cc
 t12:
 	g++ -g -o t12 t12.cc
 
 .PHONY : clean
 clean : 
-	 rm -rf  t12
+	 rm -rf  base t12

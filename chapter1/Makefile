@@ -1,17 +1,23 @@
 .PHONY : ALL
-ALL :  core debug fstream t1.1 vector
+ALL :  core debug e1.3 e1.4 fstream t1.1 t1.2 vector
 
 core:
-	g++ -g -o core core.cc
+	g++ -g -Wall -o core core.cc
 debug:
-	g++ -g -o debug debug.cc
+	g++ -g -Wall -o debug debug.cc
+e1.3:
+	g++ -g -Wall -o e1.3 e1.3.cc
+e1.4:
+	g++ -g -Wall -o e1.4 e1.4.cc
 fstream:
-	g++ -g -o fstream fstream.cc
+	g++ -g -Wall -o fstream fstream.cc
 t1.1:
-	g++ -g -o t1.1 t1.1.cc
+	g++ -g -Wall -o t1.1 t1.1.cc
+t1.2:
+	g++ -g -Wall -o t1.2 t1.2.cc
 vector:
-	g++ -g -o vector vector.cc
+	g++ -g -Wall -o vector vector.cc
 
 .PHONY : clean
 clean : 
-	 rm -rf  core debug fstream t1.1 vector
+	 rm -rf  core debug e1.3 e1.4 fstream t1.1 t1.2 vector

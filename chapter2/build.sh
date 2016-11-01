@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# this is just a test!
 # if Makefile already exists, just rename it
 make_file="Makefile"
 if [ -f "$make_file" ]; then

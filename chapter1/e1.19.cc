@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
       count = 0;
     }
   }
-  if (count == 10) {
+  if ((upper - lower + 1) % 10 != 0) {
     std::cout << std::endl;
   }
   return 0;

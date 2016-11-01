@@ -3,8 +3,7 @@
 # if Makefile already exists, just rename it
 make_file="Makefile"
 if [ -f "$make_file" ]; then
-  echo 'INFO: find Makefile in current directory, rename it to Makefile.origin instead'
-  mv "$make_file" "${make_file}.origin"
+  rm -rf "$make_file"
 fi
 
 # generate make file body
